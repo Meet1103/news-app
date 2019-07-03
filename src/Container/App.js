@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import NewsChannels from "../Component/ChannelList/NewsChannels";
 import NewsCard from "../Component/News/NewsCard";
-import NotFound from "../Component/NotFound/NotFound";
 import "./App.css";
 
 const App = () => {
@@ -17,7 +16,6 @@ const App = () => {
                 <Switch>
                     <Route path="/" component={NewsChannels} exact />
                     <Route path="/source/:id" component={NewsCard} exact />
-                    <Route component={NotFound} exact />
                 </Switch>
 
                 <footer className="text-center m-2 fixed-bottom font-weight-bolder">
