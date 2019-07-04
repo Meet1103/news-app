@@ -1,13 +1,13 @@
 import React from "react";
-import Channel from "./Name";
+import Name from "./Name";
 
-const ChannelList = ({ channels }) => {
+const NameList = ({ channels }) => {
     return (
         <div>
         {
             channels.map((channel,i) => {
             return (
-            <Channel 
+            <Name 
             key={channels[i].id}
             news={channels[i].name}
             />
@@ -18,4 +18,4 @@ const ChannelList = ({ channels }) => {
     )
 }
 
-export default ChannelList;
+export default NameList;

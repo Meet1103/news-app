@@ -1,11 +1,16 @@
 import React from "react";
 
-const Channel = ({ news }) => {
+const Name = ({ news }) => {
     return (
-        <ul className="list-group text-center">
-            <li className="list-group-item font-weight-bolder">{news}</li>
-        </ul>
+        <table class="table table-striped table-dark table-hover text-center">
+            <tbody>
+            <tr>
+                <th scope="row">{news}</th>
+            </tr>
+            </tbody>
+        </table>
     )
 }
 
-export default Channel;
+export default Name;
+
