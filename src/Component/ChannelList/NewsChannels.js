@@ -25,33 +25,32 @@ class NewsChannels extends Component {
     }
 
     render() {
-    let { channels , searchQuery , loading } = this.state;
-    // Runs this while data is being fetched from news api
-    if (loading) {
-        console.log("load",channels)
-        return <Loading />
-    }
+        let { channels , searchQuery , loading } = this.state;
+        // Runs this while data is being fetched from news api
+        if (loading) {
+            return <Loading />
+        }
 
-    // Runs this when data is fetched
-    else {
-    const filteredChannels = channels.filter(channel =>{
-        return channel.name.toLowerCase().includes(searchQuery.toLowerCase());
-    })
-    return (
-        <div>
-            {console.log("real",channels)}
-            <Search onSearchChange={this.onSearchChange} />
-            { /* Runs this , if theres any matching channel with search result */ }
-            <Scroll>
-                    <NameList channels={filteredChannels} />
-            </Scroll>
-            { /* Runs this , if theres no matching channel with search result */ }
-            <NoChannel channels={filteredChannels} />
-        </div>
-    )
+        // Runs this when data is fetched
+        else {
+        const filteredChannels = channels.filter(channel =>{
+            return channel.name.toLowerCase().includes(searchQuery.toLowerCase());
+        })
+        return (
+            <div>
+                <Search onSearchChange={this.onSearchChange} />
+                { /* Runs this , if theres any matching channel with search result */ }
+                <Scroll>
+                        <NameList channels={filteredChannels} />
+                </Scroll>
+                { /* Runs this , if theres no matching channel with search result */ }
+                <NoChannel channels={filteredChannels} />
+            </div>
+        )
     }
     
     }
+
 }
 
 export default NewsChannels;

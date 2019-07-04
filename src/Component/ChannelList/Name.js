@@ -1,10 +1,11 @@
 import React from "react";
+import { withRouter } from "react-router-dom"
 
-const Name = ({ news }) => {
+const Name = ({ id , news , history }) => {
     return (
-        <table class="table table-striped table-dark table-hover text-center">
+        <table className="table table-striped table-dark table-hover text-center">
             <tbody>
-            <tr>
+            <tr onClick={() => history.push(`/source/${id}`)}>
                 <th scope="row">{news}</th>
             </tr>
             </tbody>
@@ -12,5 +13,5 @@ const Name = ({ news }) => {
     )
 }
 
-export default Name;
+export default withRouter(Name);
 

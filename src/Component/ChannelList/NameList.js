@@ -1,5 +1,5 @@
 import React from "react";
-import Name from "./Name";
+import Name from "./Name"
 
 const NameList = ({ channels }) => {
     return (
@@ -9,6 +9,7 @@ const NameList = ({ channels }) => {
             return (
             <Name 
             key={channels[i].id}
+            id={channels[i].id}
             news={channels[i].name}
             />
             )
